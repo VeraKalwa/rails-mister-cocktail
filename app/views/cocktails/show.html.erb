@@ -1,8 +1,8 @@
-<h1><%= @cocktail.name %></h1>
-<p>
-  <div class="flex-container cocktail">
+<div class="flex-container cocktail">
+  <h1><%= @cocktail.name %></h1>
+  <%= cl_image_tag 'photo-1550426735-c33c7ce414ff_ibyark', width: 300, height: 300,  crop: :thumb%>
+  <br>
   <strong>Ingredients:</strong>
-  <ul>
   <% @cocktail.doses.each do |dose| %>
     <div class="flex-item cocktail">
       <p><%= dose.description %> <%= dose.ingredient.name %>
@@ -11,14 +11,10 @@
          <% end %>
     </div>
   <% end %>
-  </ul>
+  <div class="links">
+    <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: "btn btn-flat" %>
+    <%= link_to 'Back', cocktails_path, class: "btn btn-flat" %>
   </div>
-</p>
-
-
-
-<%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: "btn btn-flat" %>
-
-<%= link_to 'Back', cocktails_path, class: "btn btn-flat" %>
+</div>
 
 

@@ -11,6 +11,17 @@
   justify-content: space-around;
 }
 
+.flex-container.cocktail{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.flex-item.cocktail{
+  flex-direction: row;
+}
+
 .flex-item{
   margin: 10px;
 }
